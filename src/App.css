@@ -4,6 +4,12 @@
   justify-content: space-around;
 }
 
+.empty_div{
+  border: 2px solid black;
+  width: 350px;
+  height: 350px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
