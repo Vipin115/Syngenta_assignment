@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import { EmptyDiv } from './Components/Div';
-import { Circle } from './Components/Circles';
+import { EmptyDiv } from './Components/Div/Div';
+import { Circle } from './Components/Circles/Circles';
 
 function App() {
   return (
-    <div style={{display:"flex",justifyContent:"space-around"}} className="App">
+    <div className="App">
       <EmptyDiv/>
       <Circle/>
     </div>

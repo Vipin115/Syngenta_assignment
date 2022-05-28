@@ -1,0 +1,24 @@
+.Circle div{
+   border: 1px solid black;
+   border-radius: 50%;
+   width: 100px;
+   height: 100px;
+   margin-bottom: 20px;
+  
+
+}
+.first_div{
+    background-color: cadetblue;
+}
+.second_div{
+    background-color: blue;
+}
+.third_div{
+    background-color: blueviolet;
+}
+.fourth_div{
+    background-color: pink;
+}
+.fifth_div{
+    background-color: teal;
+}
