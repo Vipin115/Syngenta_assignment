@@ -38,7 +38,7 @@ function App() {
    setAdd([...add,baloons])
   }
 
-  // to add back circles to original postion
+  // to add back circles to its original postion
   const handleback=(el)=>{
     let baloons = add.filter((x)=>el[1]!=x[1])
     setAdd([...baloons])
@@ -50,6 +50,7 @@ function App() {
       <div className='baloon_div'>
         {circle.map((el)=><CircleDiv key={el[1]} color={el[0]} number={el[1]}/>)}
       </div>
+     
       <div className='empty_div' style={{display:"flex", flexWrap:"wrap", gap:"5px"}}>
         {add.map((el)=>{
           return(
