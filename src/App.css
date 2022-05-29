@@ -1,13 +1,32 @@
 .App {
+  position: relative;
   text-align: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .empty_div{
+  position: absolute;
   border: 2px solid black;
-  width: 350px;
-  height: 350px;
+  left: 30px;
+  bottom: 50px;
+  height: 40%;
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+
+}
+.baloon_div{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto auto auto auto;
+  height: 85%;
+  gap: 10px;
 }
 
 .App-logo {

@@ -12,7 +12,7 @@ function App() {
   const [shootnum,setShoot] = useState("")
 
   // generate  random colors of array
-  function randomClr(){
+  const randomClr=()=>{
     let colorArr = []
     for(let i=1; i<=5; i++){
       colorArr.push([`#${Math.floor(Math.random()*16777215).toString(16)}`, i])
@@ -25,22 +25,32 @@ function App() {
     randomClr()
   },[])
 
-  function handleShoot(){
-    let baloons = circle.find((el)=>el[1]=shootnum)
-    const res = circle.filter((el)=>el[1]!=setShoot)
+  // to shoot the circles into the div
+
+  const handleShoot=()=>{
+    let baloons = circle.find((el)=>el[1]==shootnum)
+    if(!baloons){
+      alert("not a valid no")
+      return
+    }
+    const res = circle.filter((el)=>el[1]!=shootnum)
     setCircle([...res])
-   setAdd([...add, baloons])
+   setAdd([...add,baloons])
   }
 
-  function handleback(el){
-    let arr = add.filter((x)=>el[1]!=x[1])
-    setAdd([...arr])
-    setCircle([...circle,el]).sort((a,b)=>a[1]-b[1])
+  // to add back circles to original postion
+  const handleback=(el)=>{
+    let baloons = add.filter((x)=>el[1]!=x[1])
+    setAdd([...baloons])
+    setCircle([...circle,el].sort((a,b)=>a[1]-b[1]))
   }
 
   return (
     <div className="App">
-      <div className='empty_div'>
+      <div className='baloon_div'>
+        {circle.map((el)=><CircleDiv key={el[1]} color={el[0]} number={el[1]}/>)}
+      </div>
+      <div className='empty_div' style={{display:"flex", flexWrap:"wrap", gap:"5px"}}>
         {add.map((el)=>{
           return(
             <div onClick={()=>handleback(el)}>
@@ -48,9 +58,6 @@ function App() {
             </div>
           )
         })}
-      </div>
-      <div>
-        {circle.map((el)=><CircleDiv key={el[1]} color={el[0]} number={el[1]}/>)}
       </div>
       <div style={{marginTop:"100px"}}>
         <input onChange={(e)=>setShoot(e.target.value)} type="text" />
