@@ -59,7 +59,7 @@ function App() {
           )
         })}
       </div>
-      <div style={{marginTop:"100px"}}>
+      <div className='Shoot_btn'>
         <input onChange={(e)=>setShoot(e.target.value)} type="text" />
         <button onClick={handleShoot}>Shoot</button>
       </div>

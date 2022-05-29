@@ -26,7 +26,12 @@
   align-items: center;
   margin: auto auto auto auto;
   height: 85%;
-  gap: 10px;
+  gap: 20px;
+}
+.Shoot_btn{
+  width: 40%;
+  position: absolute;
+  right: 30px;
 }
 
 .App-logo {
